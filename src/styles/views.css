@@ -1,0 +1,41 @@
+.datatable-component{
+    width: 100%;
+    padding: 20px 40px;
+    overflow-y: scroll;
+}
+
+.datatable-component__search{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+}
+
+.datatable-component__input-search {
+    padding: 0.5rem  1rem;
+    border-radius: 10px;
+    border: 1px solid rgb(128, 128, 128, 0.4);
+}
+
+.datatable-component__input-search:focus {
+    border: 1px solid rgb(128, 128, 128, 1);
+    outline: none;
+}
+
+.datatable-component__button-search {
+    background-color: rgb(98, 234, 189, .6);
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: .5rem 1rem;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.datatable-component__button-search:hover {
+    background-color: rgb(98, 234, 189, 1);
+}
+
+/*----*/
+.datatable__wrapper {
+    margin-top: 50px;
+}

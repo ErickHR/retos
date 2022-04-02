@@ -1,3 +1,26 @@
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#root{
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+  background-color: aliceblue;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
 .App {
   text-align: center;
 }
