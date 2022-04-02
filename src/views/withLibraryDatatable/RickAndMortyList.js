@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import DataTable from 'react-data-table-component';
 import './../../styles/views.css'
+import timeConver from './../../utils/time'
 
 const RickyAndMortyList = () => {
 
@@ -31,10 +32,14 @@ const RickyAndMortyList = () => {
         {
             name : 'Available Time',
             selector: row => {
-                let airDate = new Date( row.air_date )
-                let created = new Date( row.created )
-                let diffDate = airDate.getTime() - created.getTime()
-                return diffDate
+                const timeObject = timeConver( row.air_date, row.created )
+                return (
+                    <div>
+                        <span> { timeObject.diffDate } </span>
+                        <br/>
+                        <span> { timeObject.time }</span>
+                    </div>
+                )
             },
         }
     ];

@@ -3,6 +3,8 @@ import axios from 'axios'
 import { useEffect, useState } from 'react';
 import Datatables from '../../components/datatable/index.js';
 
+import timeConver from './../../utils/time'
+
 const RickyAndMortyList = () => {
 
     const columns = [
@@ -28,11 +30,14 @@ const RickyAndMortyList = () => {
         {
             name : 'Available Time',
             selector: row => {
-                let airDate = new Date( row.air_date )
-                let created = new Date( row.created )
-                let diffDate = airDate.getTime() - created.getTime()
-                
-                return -1*diffDate
+                const timeObject = timeConver( row.air_date, row.created )
+                return (
+                    <div>
+                        <span> { timeObject.diffDate } </span>
+                        <br/>
+                        <span> { timeObject.time }</span>
+                    </div>
+                )
             },
         }
     ];
